@@ -1,60 +1,37 @@
-# Getting Started
+# react-node-websockets-demo
+A simple collaborative document editing app built with React and Node
 
-First commit
+![](./media/preview.gif)
 
-## Installation and Setup
+## How to run the app?
 
-#### Tools required -
+```bash
+#-- Setup and start the server
+cd server
+npm install # or yarn install
+npm start # or yarn start
 
-1. IntelliJ Idea (Community Edition)
-
-2. Java 1.8 or Above
-
-3. NodeJS
-
-### I. Backend and Database
-
-1. In terminal, navigate to the `demo-techfair-lifi` directory (if not already)
-```
-cd demo-techfair-lifi
+#-- Setup and start the client
+cd client
+npm install # or yarn install
+npm start # or yarn start
 ```
 
-2. Run the following command to start the Spring Boot application:
-```
-.\gradlew.bat bootRun
-```
+## License
+[MIT](LICENSE)
 
-Backend should now be running on `http://localhost:8080`.
+## Credits
+This project was initially forked from the [`AvanthikaMeenakshi/node-websockets`](https://github.com/AvanthikaMeenakshi/node-websockets) repository and implemented according to [this LogRocket blog post](https://blog.logrocket.com/websockets-tutorial-how-to-go-real-time-with-node-and-react-8e4693fbf843/).
 
-### II. Frontend
+Credit goes to the original author [Avanthika Meenakshi](https://blog.logrocket.com/author/avanthikameenakshi/) who developed the original version.
 
-1. Navigate to the `frontend` directory
-```
-cd frontend
-```
-2. Install the dependencies using the following command:
-```
-npm install
-```
+## Changelog
 
-3. Start the development server using the following command:
-```
-npm start
-```
+This project has the following changes compared to the original project.
 
-The frontend application should now be running on `http://localhost:3000`.
-
-### * Accessing H2 Database
-
-I've used the H2 Database as an inmemory database (meaning data will be persisted only until the current backend application session is running) 
-To access the H2 Database console, follow these steps:
-
-1. Make sure the backend server is running.c
-
-2. Visit `http://localhost:8080/h2-console`. In your first login, you may need to enter the default authorization credentials. Default username: myuser, and default password: mypassword.
-
-3. In the "JDBC URL" field, enter the URL specified in the `application.properties` file of the backend. The default URL is `jdbc:h2:mem:testdb`.
-
-4. Enter your username and password (as specified in the `application.properties` file) in the "User Name" and "Password" fields, respectively. The default username is `sa` and the default password is an empty string.
-
-5. Click "Connect" to access the H2 Database console.
+- Upgraded the React version to 18
+- Refactored the client app using multiple functional components
+- Refactored the server app using multiple functions and handlers
+- Used better dependencies and implementations (i.e., `ws` instead of `websocket`, `uuid` instead of `Math.random`, etc.)
+- Used the `react-use-websocket` hook/library instead of directly using the inbuilt WebSockets browser API.
+- Fixed several bugs
